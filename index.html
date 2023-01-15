@@ -4,12 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
-    <title>Snake</title>
+    <title>Menu</title>
   </head>
   <body>
-    <h1>Snake</h1>
-    <canvas id="board"></canvas>
+    <main>
+      <h1>Settings</h1>
+      <div class="settings">
+        <div class="individualSetting">
+          <div class="innerSetting"><p>Size</p></div>
+          <p class="colon">:</p>
+          <div class="toggle">
+            <img src="./images/triangle-left-svgrepo-com.svg" alt="" />
+            <p>Small Box</p>
+            <img src="./images/triangle-right-svgrepo-com (1).svg" alt="" />
+          </div>
+        </div>
+        <div class="individualSetting">
+          <div class="innerSetting"><p>Speed</p></div>
+          <p class="colon">:</p>
+          <div class="toggle">
+            <img src="./images/triangle-left-svgrepo-com.svg" alt="" />
+            <p>Normal</p>
+            <img src="./images/triangle-right-svgrepo-com (1).svg" alt="" />
+          </div>
+        </div>
+        <div class="individualSetting">
+          <div class="innerSetting"><p>Screen Wrapping</p></div>
+          <p class="colon">:</p>
+          <div class="toggle">
+            <img src="./images/triangle-left-svgrepo-com.svg" alt="" />
+            <p>On</p>
+            <img src="./images/triangle-right-svgrepo-com (1).svg" alt="" />
+          </div>
+        </div>
+        <div class="individualSetting">
+          <div class="innerSetting"><p>Background Color</p></div>
+          <p class="colon">:</p>
+          <div class="toggle">
+            <img src="./images/triangle-left-svgrepo-com.svg" alt="" />
+            <p>Black</p>
+            <img src="./images/triangle-right-svgrepo-com (1).svg" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <button id="start">START</button>
+    </main>
   </body>
 </html>

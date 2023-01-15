@@ -1,4 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+/*///// Game /////*/
+
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Press Start 2P", Courier, monospace;
   text-align: center;
+}
+
+.title {
+  margin-top: 2rem;
+}
+
+canvas {
+  position: relative;
+}
+
+#gameOver {
+  display: none;
+
+  position: absolute;
+  left: 45vh;
+  bottom: 45vh;
+
+  z-index: 1;
+
+  height: 130px;
+  width: 325px;
+
+  color: aliceblue;
+}
+
+.deathScreen {
+  display: block !important;
+}
+
+/* ///// Menu ///// */
+
+main {
+  height: 100vh;
+  background-color: black;
+}
+
+main h1 {
+  color: white;
+  padding-top: 2rem;
+}
+
+main p {
+  color: white;
+}
+
+main img {
+  height: 1rem;
+}
+
+/* Settings */
+
+.settings {
+  padding: 3rem;
+}
+
+.individualSetting {
+  display: flex;
+  padding-top: 1.5rem;
+
+  text-align: left;
+}
+
+.innerSetting {
+  width: 30rem;
+}
+
+.colon {
+  padding-right: 4rem;
+}
+
+.toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+main button {
+  border: none;
+  background-color: black;
+  color: white;
+
+  font-family: "Press Start 2P";
+  font-size: 1.5rem;
+
+  padding-top: 3rem;
+}
+
+main button:hover {
+  cursor: pointer;
+  color: lime;
 }
