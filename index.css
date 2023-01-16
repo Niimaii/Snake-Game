@@ -49,14 +49,20 @@ main {
 main h1 {
   color: white;
   padding-top: 2rem;
+  cursor: default;
 }
 
 main p {
   color: white;
+  cursor: default;
 }
 
 main img {
   height: 1rem;
+}
+
+main img:hover {
+  cursor: pointer;
 }
 
 /* Settings */

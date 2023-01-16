@@ -1,29 +1,29 @@
 //board
-var blockSize = 25;
-var rows = 25;
-var cols = 25;
-var board;
-var context;
-var speed = 10;
+const blockSize = 25;
+const rows = 25;
+const cols = 25;
+let board;
+let context;
+let speed = 10;
 let moved = true;
 const moveSpeed = 15;
 const gg = document.getElementById("gameOver");
 // Snake head
 // https://youtu.be/baBq5GAL0_U?t=660
 // These are the coordinates for the snake head. Watch video to see why multiply by blockSize
-var snakeX = blockSize * 5;
-var snakeY = blockSize * 5;
+let snakeX = blockSize * 5;
+let snakeY = blockSize * 5;
 
-var velocityX = 0;
-var velocityY = 0;
+let velocityX = 0;
+let velocityY = 0;
 
 var snakeBody = [];
 
 // Food
-var foodX;
-var foodY;
+let foodX;
+let foodY;
 
-var gameOver = false;
+let gameOver = false;
 
 window.onload = function () {
   board = document.getElementById("board");
