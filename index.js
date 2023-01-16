@@ -8,12 +8,12 @@ const screenWrapping = ["On", "Off"];
 // ↓↓↓↓↓ Initiating variables ↓↓↓↓↓
 let sizeToggle = document.getElementById("size");
 
-const leftSizeArrow = document.getElementById("leftSizeArrow");
-const rightSizeArrow = document.getElementById("rightSizeArrow");
-const leftSpeedArrow = document.getElementById("leftSpeedArrow");
-const rightSpeedArrow = document.getElementById("rightSpeedArrow");
-const leftScreenArrow = document.getElementById("leftScreenArrow");
-const rightScreenArrow = document.getElementById("rightScreenArrow");
+// const leftSizeArrow = document.getElementById("leftSizeArrow");
+// const rightSizeArrow = document.getElementById("rightSizeArrow");
+// const leftSpeedArrow = document.getElementById("leftSpeedArrow");
+// const rightSpeedArrow = document.getElementById("rightSpeedArrow");
+// const leftScreenArrow = document.getElementById("leftScreenArrow");
+// const rightScreenArrow = document.getElementById("rightScreenArrow");
 
 const sizeText = document.getElementById("size");
 const speedText = document.getElementById("speed");
@@ -38,42 +38,37 @@ for (let i = 0; i < rightArrows.length; i++) {
 }
 
 function changeLeftToggle(e) {
-  let nextSibling = e.target.nextElementSibling;
+  let nextSibling = e.target.nextElementSibling.firstChild;
   // This returns the targted element associated array
   let currentArray = toggleMap.get(nextSibling);
   // This returns the position of the associated array
   let currentPos = toggleMap.get(currentArray);
 
   if (currentPos > 0) {
-    currentPos -= 1;
+    currentPos = currentPos - 1;
+    toggleMap.set(currentArray, currentPos);
 
     // TODO: This only runs once?
     nextSibling.textContent = currentArray[currentPos];
   }
-
-  console.log(currentArray);
 }
 
 function changeRightToggle(e) {
-  let previousSibling = e.target.previousElementSibling;
+  let previousSibling = e.target.previousElementSibling.firstChild;
   // This returns the targted element associated array
   let currentArray = toggleMap.get(previousSibling);
   // This returns the position of the associated array
   let currentPos = toggleMap.get(currentArray);
 
+  console.log(toggleMap.get(previousSibling));
+
   if (currentPos < currentArray.length - 1) {
-    currentPos += 1;
+    currentPos = currentPos + 1;
+    toggleMap.set(currentArray, currentPos);
 
     // TODO: This only runs once?
     previousSibling.textContent = currentArray[currentPos];
   }
-
-  console.log(
-    "current pos :",
-    currentPos,
-    "current array length:",
-    currentArray.length
-  );
 }
 
 start.addEventListener("click", () => {

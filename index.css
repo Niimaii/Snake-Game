@@ -106,3 +106,8 @@ main button:hover {
   cursor: pointer;
   color: lime;
 }
+
+.otherRight {
+  width: 10rem;
+  text-align: center;
+}
