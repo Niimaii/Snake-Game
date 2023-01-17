@@ -1,13 +1,16 @@
 //board
 const blockSize = 25;
-const rows = 25;
-const cols = 25;
+let rows = localStorage.getItem("rowsLocal");
+let cols = localStorage.getItem("colsLocal");
+let speed = localStorage.getItem("speedLocal");
+let wrappingScreen = localStorage.getItem("screenLocal");
 let board;
 let context;
-let speed = 10;
 let moved = true;
 const moveSpeed = 15;
 const gg = document.getElementById("gameOver");
+
+// console.log(localStorage.getItem("rowsLocal"));
 // Snake head
 // https://youtu.be/baBq5GAL0_U?t=660
 // These are the coordinates for the snake head. Watch video to see why multiply by blockSize
