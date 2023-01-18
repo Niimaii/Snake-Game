@@ -1,9 +1,9 @@
 //board
 const blockSize = 25;
-let rows = localStorage.getItem("rowsLocal");
-let cols = localStorage.getItem("colsLocal");
-let speed = localStorage.getItem("speedLocal");
-let wrappingScreen = localStorage.getItem("screenLocal");
+let rows = localStorage.getItem("rowsLocal") || 25;
+let cols = localStorage.getItem("colsLocal") || 25;
+let speed = localStorage.getItem("speedLocal") || 10;
+let wrappingScreen = localStorage.getItem("screenLocal") || false;
 let board;
 let context;
 let moved = true;
