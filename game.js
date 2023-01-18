@@ -10,6 +10,8 @@ let moved = true;
 const moveSpeed = 15;
 const gg = document.getElementById("gameOver");
 
+console.log(wrappingScreen);
+
 // console.log(localStorage.getItem("rowsLocal"));
 // Snake head
 // https://youtu.be/baBq5GAL0_U?t=660
@@ -87,8 +89,13 @@ function update() {
     snakeY < 0 ||
     snakeY > (rows - 1) * blockSize
   ) {
-    gameOver = true;
-    death();
+    // Local storgae saves booleans as strings.....
+    if (wrappingScreen == false || wrappingScreen == "false") {
+      gameOver = true;
+      death();
+    } else {
+      wrapScreen();
+    }
   }
 
   for (let i = 0; i < snakeBody.length; i++) {
@@ -96,6 +103,19 @@ function update() {
       gameOver = true;
       death();
     }
+  }
+}
+
+function wrapScreen() {
+  if (snakeX > (cols - 1) * blockSize) {
+    snakeX = 0;
+  } else if (snakeX < 0) {
+    snakeX = (cols - 1) * blockSize;
+  }
+  if (snakeY > (rows - 1) * blockSize) {
+    snakeY = 0;
+  } else if (snakeY < 0) {
+    snakeY = (rows - 1) * blockSize;
   }
 }
 

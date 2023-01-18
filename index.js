@@ -7,8 +7,9 @@ const sizeText = document.getElementById("size");
 const speedText = document.getElementById("speed");
 const screenText = document.getElementById("screenWrapping");
 
-let wrappingScreen = false;
-localStorage.setItem("screenLocal", wrappingScreen);
+if (localStorage.getItem("screenLocal") == null) {
+  localStorage.setItem("screenLocal", false);
+}
 
 // Starts game
 const start = document.getElementById("start");
@@ -43,9 +44,12 @@ let speedPos =
   speeds.indexOf(localStorage.getItem("speedName")) > 0
     ? speeds.indexOf(localStorage.getItem("speedName"))
     : 0;
-let screenPos = screenWrapping.indexOf(localStorage.getItem("screenName")) || 0;
+let screenPos =
+  screenWrapping.indexOf(localStorage.getItem("screenName")) > 0
+    ? screenWrapping.indexOf(localStorage.getItem("screenName"))
+    : 0;
 
-console.log(sizePos, speedPos);
+console.log(localStorage.getItem("screenLocal"));
 // Needed to loop because I targted multiple elements with my querySelctAll
 for (let i = 0; i < leftArrows.length; i++) {
   leftArrows[i].addEventListener("click", changeLeftToggle);
@@ -143,6 +147,7 @@ function changeRightToggle(e) {
       let wrapping = settingsMap.get(currentArray[currentPos]);
 
       screen = wrapping;
+      console.log("This was ran: ", currentArray[currentPos]);
 
       localStorage.setItem("screenLocal", screen);
     }
