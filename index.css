@@ -14,9 +14,6 @@ body {
 
 .title {
   margin-top: 2rem;
-}
-
-canvas {
   position: relative;
 }
 
@@ -24,8 +21,12 @@ canvas {
   display: none;
 
   position: absolute;
-  left: 45vh;
-  bottom: 45vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  margin: auto;
 
   z-index: 1;
 
@@ -39,7 +40,40 @@ canvas {
   display: block !important;
 }
 
-/* ///// Menu ///// */
+/* Scores */
+
+.scoreTitles {
+  display: flex;
+
+  align-items: center;
+  justify-content: left;
+
+  padding-left: 10rem;
+  /* padding-bottom: 0.5rem; */
+}
+
+.scores {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+.score {
+  display: flex;
+  padding-right: 2.5rem;
+  padding-left: 1rem;
+
+  align-items: center;
+}
+
+/* .currentScore {
+}
+
+.highestScore {
+} */
+
+/* ///// Settings ///// */
 
 main {
   height: 100vh;
@@ -50,6 +84,8 @@ main h1 {
   color: white;
   padding-top: 2rem;
   cursor: default;
+
+  text-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 
 main p {
@@ -64,8 +100,6 @@ main img {
 main img:hover {
   cursor: pointer;
 }
-
-/* Settings */
 
 .settings {
   padding: 3rem;
@@ -105,9 +139,66 @@ main button {
 main button:hover {
   cursor: pointer;
   color: lime;
+
+  text-shadow: 0px 0px 20px rgb(0, 255, 0);
 }
 
 .otherRight {
   width: 10rem;
   text-align: center;
+}
+
+/* Menu Fade in */
+
+.gameOverOptions:hover {
+  cursor: default;
+}
+
+.gameOverOptions {
+  margin-top: 0.8rem;
+  animation-name: gameOverOptions;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: gameOverOptions;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes gameOverOptions {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes gameOverOptions {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gameOverOptions {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

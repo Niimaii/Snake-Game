@@ -10,7 +10,19 @@ let moved = true;
 const moveSpeed = 15;
 const gg = document.getElementById("gameOver");
 
-console.log(wrappingScreen);
+// Score
+let score = 0;
+let highScore = localStorage.getItem("highestLocalScore")
+  ? localStorage.getItem("highestLocalScore")
+  : 0;
+
+const currentScore = document.getElementById("currentScore");
+const highestScore = document.getElementById("highestScore");
+
+currentScore.textContent = score;
+highestScore.textContent = highScore;
+
+console.log(currentScore, highestScore);
 
 // console.log(localStorage.getItem("rowsLocal"));
 // Snake head
@@ -58,6 +70,7 @@ function update() {
   if (snakeX == foodX && snakeY == foodY) {
     snakeBody.push([foodX, foodY]);
     placeFood();
+    scoreCounter();
   }
 
   for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -108,14 +121,14 @@ function update() {
 
 function wrapScreen() {
   if (snakeX > (cols - 1) * blockSize) {
-    snakeX = 0;
+    snakeX = -1 * blockSize;
   } else if (snakeX < 0) {
-    snakeX = (cols - 1) * blockSize;
+    snakeX = cols * blockSize;
   }
   if (snakeY > (rows - 1) * blockSize) {
-    snakeY = 0;
+    snakeY = -1 * blockSize;
   } else if (snakeY < 0) {
-    snakeY = (rows - 1) * blockSize;
+    snakeY = rows * blockSize;
   }
 }
 
@@ -184,6 +197,7 @@ function resetGame() {
   snakeBody = [];
   gameOver = false;
   score = 0;
+  currentScore.textContent = score;
   gg.classList.remove("deathScreen");
   placeFood();
 }
@@ -198,4 +212,14 @@ function death() {
       document.location.href = "index.html";
     }
   });
+}
+
+function scoreCounter() {
+  score++;
+  currentScore.textContent = score;
+  if (score > highScore) {
+    localStorage.setItem("highestLocalScore", score);
+    highScore = localStorage.getItem("highestLocalScore", score);
+    highestScore.textContent = highScore;
+  }
 }

@@ -174,9 +174,9 @@ let settingsMap = new Map([
   ["Large Box", [32, 32]],
   ["Small Rect", [25, 40]],
   ["Large Rect", [32, 55]],
-  ["Normal", 10],
-  ["Fast", 15],
-  ["Very Fast", 20],
+  ["Normal", 8],
+  ["Fast", 13],
+  ["Very Fast", 27],
   ["Off", false],
   ["On", true],
 ]);

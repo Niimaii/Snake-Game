@@ -15,15 +15,28 @@
     <title>Snake</title>
   </head>
   <body>
-    <h1 class="title">Snake</h1>
+    <div class="scoreTitles">
+      <h1 class="title">Snake</h1>
+      <div class="scores">
+        <div class="score">
+          <p>Score:</p>
+          <p id="currentScore">0</p>
+        </div>
+        <div class="score">
+          <p>High Score:</p>
+          <p id="highestScore">0</p>
+        </div>
+      </div>
+    </div>
     <div id="gameOver">
       <div>
         <h2>GAME OVER</h2>
         <p></p>
       </div>
-      <p>press r to try again</p>
-      <p>press m for menu</p>
+      <p class="gameOverOptions">press r to try again</p>
+      <p class="gameOverOptions">press m for menu</p>
     </div>
+
     <canvas id="board"></canvas>
   </body>
 </html>
