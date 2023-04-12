@@ -4,7 +4,7 @@ Play a retro snake game where you can customize your experience
 
 ## Settings
 
-![alt text] (https://imgur.com/uPdz6eu)
+![] (images/settings.png%20settings.png)
 
 Here you can customize how big you want the playing field to be, how fast the snake moves and if you want screen wrapping enabled.
 
